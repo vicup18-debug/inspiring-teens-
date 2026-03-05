@@ -88,6 +88,23 @@
                 font-size: 2.8rem !important;
             }
         }
+
+        .mobile-menu-active {
+            display: flex !important;
+            animation: slideDown 0.4s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
     </style>
 </head>
 
@@ -240,15 +257,13 @@
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // 1. Initialize Animations
         AOS.init({ duration: 1000, once: true });
 
-        // 2. Mobile Menu Toggle (Fixes the hamburger button)
+        // This is the function the hamburger button is looking for
         function toggleMenu() {
             document.getElementById('mobileMenu').classList.toggle('mobile-menu-active');
         }
 
-        // 3. Bank Details Toggle
         function toggleBank() {
             document.getElementById('bankToggle').classList.toggle('active');
         }
